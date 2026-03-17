@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 웹 페이지 </title>
+    <style>
+        /* 전체 배경색과 기본 폰트 */
+        body {
+            background: #44ACFF;
+            color: #bbf631;
+            line-height: 1.7;
+            margin: 0;
+        }
+        /* 상단 헤더 꾸미기 */
+        body {
+            background-color: #44ACFF;
+            color: #F9F6C4;
+            text-align: center;
+            padding: 50px 0;
+            
+        }
+
+        /* 3. 메뉴바(nav) 꾸미기 */
+        nav {
+            text-align: center;
+            padding: 15px;
+            background-color: #89D4FF;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #FE9EC7;
+        }
+        /* 4 이미지 (사진) 예쁘게 만들기 */
+        img{
+            display: block;
+            margin: 30px auto;
+            width: 250px;
+            border-radius: 50px;
+            border: 10px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0,1);
+
+
+
+        }
+        .my-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #72453fdc;
+            color: white;
+            text-decoration: none ;
+            border-radius: 30px;
+            margin-top: 20px;
+            transition: 0.35;
+
+        }
+        /*마우스를 올리면(Hover) gyrhk*/
+        .my-button:hover{
+            background-color: #bbf631;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>꾸준한 개발자, 송우혁입니다.
+    </h1>
+</header>
+    <nav>
+        <a href="https://www.youtube.com/@limtoon" target="_blank">유튜버:림툰
+        <a href="https://gjja-h.goegh.kr/gjja-h/main.do" target="_blank">광주중앙고등학교</a>
+    </nav>
+
+    <main>
+        <img src="./image/사진.png" alt="내사진" width="200">
+        <p>
+            <ul>
+            <li>취미: 게임하기, 노래듣기, 배드민턴</li>
+            <li>장래희망: 심리학자</li>
+            <li>좋아하는 음식: 탕수육</li>
+        </ul>
+        </p>
+        <a href="#" class="my-button">나에 대해 더 알아보기</a>
+    </main>
+
+    <footer>
+        문의: kim6hyun@goedu.kr, &copy; all right resevered by 2026 송우혁
+    </footer>
+</body>
+</html>
