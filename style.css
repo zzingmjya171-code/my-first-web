@@ -1,0 +1,79 @@
+ body{
+    font-family: "Jua", sans-serif;
+    background-color: #FFFBE6;
+    color: #5A4A1A;
+    line-height: 1.7;
+    margin: 0;
+}
+header {
+    background-color: #FFD54F;
+    color: #4A3B00;
+    text-align: center;
+    padding: 50px 0;
+}
+nav {
+    text-align: center;
+    padding: 15px;
+    background-color: #FFECB3;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #A67C00;
+}
+    img{
+        display: block;
+        margin: 30px auto;
+        width: 250px;
+        border-radius: 50%;
+        border: 10px solid white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    header, footer {
+        padding: 50px 0;
+    }
+    main {
+        width: 80%;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: white;
+        border: 1px solid #ddd;
+    }
+    .my-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #3F72AF;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+    .my-button:hover {
+        background-color: #112d4e;
+        transform: translateY(-3px);
+    }
+ .crop-item {
+display: flex;
+gap: 50px;
+padding: 30px;
+border-radius: 15px; 
+background-color: #f9fdf9;
+
+ }
+
+.crop-image {
+flex: 1;
+
+}
+
+.crop-details {
+flex: 1.5;
+}
+
+.step-guide {
+border: 1px dashed #4caf50; 
+text-align: center;
+}
