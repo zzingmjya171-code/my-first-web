@@ -64,10 +64,16 @@ arrow_shape_up_stack
 <section id="order-area">
     <hr>
     <h2> 📦온라인 주문하기</h2>
-    <form>
-        <div class="imput-group">
+    <form action="">
+        <div class="input-row">
+            <div class="input-group">
             <label>주문자 성함</label>
-            <input type="text" placeholder="실명을 입력하세요">
+            <input type="text" id="userName" placeholder="실명을 입력하세요">
+            </div>
+            <div class="input-group">
+            <label>연락처</label>
+            <input type="text" id="userPhone" placeholder="010-0000-0000">
+        </div>
         </div>
 
         <div class="input-group">
@@ -81,17 +87,55 @@ arrow_shape_up_stack
 
         <div class="input-group">
             <label>배송 메시지</label>
-            <textarea placeholder="부재 시 문 앞에 놓아주세요"></textarea>
+            <textarea
+             name=""
+             id=""
+            placeholder="부재 시 문 앞에 놓아주세요"
+            ></textarea>
         </div>
 
-        <button type="submit">지금 바로 주문 완료</button>
+        <button type="button" class="order-btn" onclick="processOrder()">
+            지금 바로 주문 완료
+        </button>
+
+        <div id="receipt" class="receipt-box"></div>
         </form>
-            </select>
-        </div>
-    </form>
+    </section>
     </main>
+
     <footer>
- <p>   &copy; all right resevered by 2026 송우혁 kim6hyun@goedu.kr </p>  
+        문의 : kim6hyun@goedu.kr, &copy; all right resevered by 2026 송우혁
     </footer>
+
+    <script>
+        function processOrder() {
+            //1. 입력창(id)에서 값을 가져와 변수에 저장
+            let name = document.getElementById('userName').value;
+            let phone = document.getElementById('userPhone').value;
+            let message= document.querySelector('textarea').value;
+
+            //2. 입력창에 내용이 비어있는지 검사( || )
+            if (name === "" || phone === "") {
+                alert(" ⚠️ 성함과 연락처를 모두 입력해 주세요!");
+                return;
+        }
+
+        //3. 영수증 상자 찾아오기
+        let receipt = document.getElementById('receipt');
+
+        //4. 내용 채워넣기 (innerHTML 사용)
+        receipt.innerHTML = `
+            <h3> 📜주문 확인 영수증</h3>
+            <p><strong>주문자:</strong> ${name} 님</p>
+            <p><strong>연락처:</strong> ${phone} </p>
+            <p><strong>요청사항:</strong> ${message || "없음"}</p>
+            <hr>
+        <p style="text-align:center;">주문해주셔서 감사합니다! 🍟</p>
+        `;
+
+        //5. 숨겨져 있던 영수증 상자 보여주기
+         receipt.style.display = "block"
+    }
+    </script>
 </body>
 </html>
