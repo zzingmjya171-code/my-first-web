@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 첫 웹 앱</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+ <link rel="stylesheet" href="./style.css">
+<style>
+ 
+</style>
+
+</head>
+<body>
+    <header>
+        <h1><span class="material-symbols-outlined">
+agriculture
+</span>꾸준한 개발자 송우혁<span class="material-symbols-outlined">
+arrow_shape_up_stack
+</span></h1>
+    </header>
+    <nav>
+<a href="index.html"> 🏠홈으로</a>
+<a href="subject.html"> 📊전공 탐구</a>
+    </nav>
+    <main>
+<section class="agriculture-portfolio">
+<article class="crop-item">
+
+<figure class="crop-image">
+<img src="./image/potato.jpg" alt="직접 재배한 농작물 사진" />
+<figcaption>그림 1. 본인이 직접 재배한 농작물 실물</figcaption>
+</figure>
+
+<div class="crop-details">
+<h3>농작물 명칭: (감자)</h3>
+
+<section class="info-block">
+<h4>노 재배 및 생산 특성</h4>
+<ul>
+<li><strong>품종 :</strong>남작감자 .</li>
+<li><strong>재배 환경 :</strong> 시설재배 등</li>
+</ul>
+</section>
+
+<section class="info-block distribution">
+<h4>를 유통 구조 설계</h4>
+<div class="step-guide">
+<span>생산자(나)</span> → <span>로컬푸드 직매장</span> → <span>최종 소비지
+</div>
+<ul>
+<li><strong>물류 방식 :</strong> 저온 유동(Cold Chain) 활용 여부 등</li>
+<li><strong>판매 전략 :</strong> 직거래 / 온라인 마켓 등</li>
+</ul>
+</section>
+</div>
+
+</article>
+
+
+<section id="order-area">
+    <hr>
+    <h2> 📦온라인 주문하기</h2>
+    <form action="">
+        <div class="input-row">
+            <div class="input-group">
+            <label>주문자 성함</label>
+            <input type="text" id="userName" placeholder="실명을 입력하세요">
+            </div>
+            <div class="input-group">
+            <label>연락처</label>
+            <input type="text" id="userPhone" placeholder="010-0000-0000">
+        </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group">
+                <label for="unitWeight">구매 단워 선택</label>
+                <select id="unitWeight">
+                    <option value="15000">남작감자 1kg (15,000원)</option>
+                    <option value="40000">남작감자 3kg (40,000원)</option>
+                    <option value="60000">남작감자 5kg (60,000원)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+            <label for="quantity">주문 수량 (박스)</label>
+            <input type="number" id="quantity" value="1" min="1" max="10">
+        </div>
+        </div>
+
+        <div class="input-group">
+            <label for="">배송 방식 선택</label>
+            <select name="" id="deliveryFee">
+                <option value="3000">일반 택배 (3,000원)</option>
+                <option value="5000">신선 새벽 배송 (5,000원)</option>
+                <option value="0">광주 로컬푸드 매장 픽업 (무료)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="">배송 메시지</label>
+            <textarea placeholder="부재 시 문 앞에 놓아주세요"
+            ></textarea>
+        </div>
+
+        <button type="button" class="order-btn" onclick="processOrder()">
+            지금 바로 주문 완료
+        </button>
+
+        <div id="receipt" class="receipt-box"></div>
+        </form>
+    </section>
+    </main>
+
+    <footer>
+        문의 : kim6hyun@goedu.kr, &copy; all right resevered by 2026 송우혁
+    </footer>
+
+    <script>
+        function processOrder() {
+            //1. 데이터 가져오기
+            let name = document.getElementById('userName').value;
+            let phone = document.getElementById('userPhone').value;
+            let quantity = Number(document.getElementById("quantity").value);
+            let deliveryFee = Number(document.getElementById("deliveryFee").value);
+
+            //2. 선택한 상품의 가격과 이름 정보 추출
+            let unitSelect = document.getElementById("unitWeight")
+            let productPrice = Number(unitSelect.value);
+            let productName = unitSelect.options[unitSelect.selectedIndex].text;
+
+            //3. 배송비 무료 조건 구현
+            let bassPrice = productPrice * quantity;
+
+            if (bassPrice >= 30000){
+                deliveryFee = 0; //3만원 이상 시 배송비 무료
+            }
+
+            let totalPrice = bassPrice + deliveryFee;
+            let message = document.querySelector("textarea").value;
+
+
+            //4. 주문시각 및 입력 검사
+            let dateString = new Date().toLocaleString();
+
+            if (name === "" || phone === "") {
+            alert(" ⚠️ 성함과 연락처를 모두 입력해 주세요!");
+            return;
+        }
+
+
+        //5. 영수증 출력
+        let receipt = document.getElementById('receipt');
+        receipt.innerHTML = `
+            <h3> 📜주문 확인 영수증</h3>
+            <p style="color:gray; font-size: 0.8em">주문 시각: ${dateString}</p>
+            <hr>
+            <p><strong>주문자:</strong> ${name} 님</p>
+            <p><strong>연락처:</strong> ${phone} </p>
+            <p><strong>주문 상품:</strong> ${productName} </p>
+            <p><strong>주문 수량:</strong> ${quantity} </p>
+            <p><strong>배송비:</strong>
+                ${deliveryFee === 0 ? "무료배송" : deliveryFee.toLocaleString() + "원"}
+                </p>
+                <p><strong>요청사항:</strong> ${message || "없음"} </p>
+                <hr>
+            <p style="font-size: 1.2em;"><strong>총 결재 금액:
+                <span style="color:red;">${totalPrice.toLocaleString()}원</span></strong></p>
+        <p style="text-align:center;">주문해주셔서 감사합니다! 🍟</p>
+        `;
+
+        //5. 숨겨져 있던 영수증 상자 보여주기
+         receipt.style.display = "block"
+    }
+    </script>
+</body>
+</html>
