@@ -171,3 +171,37 @@ select {
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
  }
+
+ .display-box{
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 15px;/*모서리를 둥글게 깎아주는 속성 (예: 15px)*/
+    margin-bottom: 30px;
+ }
+
+ #targetimg{
+    transition: transform 0.3s ease;/* 사진 바뀔떄 부드러운 효과*/
+ }
+
+ .thumb-list {
+    display: flex;/*사진들을 가로로 나란히 배치하는 마법의 정렬 속성(f로 시작)*/
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;/*사진이 많아지면 다음 줄로 넘어가게(W로시작)*/
+ }
+
+ .thumb-list img {
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.2s;
+    width: 100px; /*썸네일 크기 고정*/
+    height: 100px;
+    object-fit: cover;/* 사진이 찌그러지지 않게 꽉 채워 자르기! (C로 시작)*/
+    border-radius: 10px;
+ }
+
+ /*사용자가 마우스를 올렸을 떄의 반응*/
+ .thumb-list img:hover{
+    border-color: #3F72AF;
+    transform: scale(1,1);/*사진을 1.1배로 살짝 키워서 클릭하고 싶게 만들기!*/
+ }
