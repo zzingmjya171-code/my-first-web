@@ -23,34 +23,31 @@ arrow_shape_up_stack
 </span></h1>
     </header>
     <nav>
-       <nav>
 <a href="index.html"> 🏠홈으로</a>
 <a href="subject.html"> 📊전공 탐구</a>
-<a href="gallery.html"> 갤러리</a>
-</nav>
-    </nav>
-    <main>
 
-        <img src="./image/버섯.png" alt="내 사진" width="200">
-<p>
-    <ul>
-    <li>취미 : <span class="material-symbols-outlined">
-sports_esports
-</span>게임하기/<span class="material-symbols-outlined">
-music_note
-</span>노래듣기/<span class="material-symbols-outlined">
-badminton
-</span>배드민턴</li>
-    <li>장래희망 : 심리학자</li>
-    <li>좋아하는 음식 : 탕수육</li>
-    </ul>
-</p>
-<a href="#" class="my-button"><span class="material-symbols-outlined">
-account_circle
-</span>나에 대해 더 알아보기</a>
+<a href="gallery.html"> 갤러리</a>
+
+
+    <main>
+        <div class="display-box">
+            <img id="targetimg" src="./image/crop1.jpg" style="width: 100%;
+            max-width: 500px;"/>
+            <p id="targetDesc">4월 7일: 남작감자 첫 수확!</p>
+        </div>
+
+        <div class="thumb-list">
+            <img src="./image/crop1.jpg"
+            onclick="show('./image/crop1.jpg','4월 7일: 남작감자 첫 수확!')"/>
+            <img src=" ./image/crop2.jpg"
+            onclick="show('./image/crop2.jpg','4월 9일:비료주기 실습 완료')">
+        </div>
     </main>
-    <footer>
- <p>   &copy; all right resevered by 2026 송우혁 kim6hyun@goedu.kr </p>  
-    </footer>
 </body>
+<script>
+    function show(imgPath, text){
+        document.getElementById("targetimg").src=imgPath;
+        document.getElementById("targetDesc").innerText=text;
+    }
+</script>
 </html>
