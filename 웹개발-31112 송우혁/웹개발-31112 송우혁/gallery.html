@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 첫 웹 앱</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+ <link rel="stylesheet" href="./style.css">
+<style>
+ 
+</style>
+
+</head>
+<body>
+    <header>
+        <h1><span class="material-symbols-outlined">
+agriculture
+</span>꾸준한 개발자 송우혁<span class="material-symbols-outlined">
+arrow_shape_up_stack
+</span></h1>
+    </header>
+    <nav>
+<a href="index.html"> 🏠홈으로</a>
+<a href="subject.html"> 📊전공 탐구</a>
+
+<a href="gallery.html"> 갤러리</a>
+
+
+    <main>
+        <div class="display-box">
+            <img id="targetimg" src="./image/crop1.jpg" style="width: 100%;
+            max-width: 500px;"/>
+            <p id="targetDesc">4월 7일: 남작감자 첫 수확!</p>
+        </div>
+
+        <div class="thumb-list">
+            <img src="./image/crop1.jpg"
+            onclick="show('./image/crop1.jpg','4월 7일: 남작감자 첫 수확!')"/>
+            <img src=" ./image/crop2.jpg"
+            onclick="show('./image/crop2.jpg','4월 9일:비료주기 실습 완료')">
+        </div>
+    </main>
+</body>
+<script>
+    function show(imgPath, text){
+        document.getElementById("targetimg").src=imgPath;
+        document.getElementById("targetDesc").innerText=text;
+    }
+</script>
+</html>
