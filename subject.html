@@ -18,7 +18,9 @@
     <header>
         <h1><span class="material-symbols-outlined">
 agriculture
-</span>꾸준한 개발자 송우혁<span class="material-symbols-outlined">
+</span>꾸준한 개발자 <span class="material-symbols-outlined">
+masks
+</span>송우혁<span class="material-symbols-outlined">
 arrow_shape_up_stack
 </span></h1>
     </header>
@@ -26,7 +28,9 @@ arrow_shape_up_stack
   <nav>
 <a href="index.html"> 🏠홈으로</a>
 <a href="subject.html"> 📊전공 탐구</a>
-<a href="gallery.html"> 갤러리</a>
+<a href="gallery.html"> <span class="material-symbols-outlined">
+add_photo_alternate
+</span>갤러리</a>
 
 
     </nav>
@@ -85,7 +89,7 @@ arrow_shape_up_stack
         <div class="input-row">
             <div class="input-group">
             <label>주문자 성함</label>
-            <input type="text" id="userName" placeholder="실명을 입력하세요">
+            <input type="text" id="username" placeholder="실명을 입력하세요">
             </div>
             <div class="input-group">
             <label>연락처</label>
@@ -151,7 +155,7 @@ arrow_shape_up_stack
     <script>
         function processOrder() {
             //1. 데이터 가져오기
-            let name = document.getElementById('userName').value;
+            let name = document.getElementById('username').value;
             let phone = document.getElementById('userPhone').value;
             let quantity = Number(document.getElementById("quantity").value);
             let deliveryFee = Number(document.getElementById("deliveryFee").value);
